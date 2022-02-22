@@ -8,6 +8,6 @@ from .config import DevConfig
 app = Flask(__name__) #create app instance
 
 # Setting up configuration
-app.config.from_object(DevConfig)
+app.config.from_object(DevConfig)#imports dev config class
 
 from app import views

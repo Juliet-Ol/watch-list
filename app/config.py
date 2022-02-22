@@ -1,11 +1,8 @@
-from distutils.debug import DEBUG
-from msilib.schema import Class
-
-
 class Config:
     '''
     General configuration parent class
     '''
+    pass
 
 class ProdConfig(Config):
     '''
