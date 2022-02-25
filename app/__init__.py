@@ -1,4 +1,5 @@
 # from flask import Flask #import flask from flask module
+from ensurepip import bootstrap
 from flask import Flask
 
 
@@ -12,5 +13,8 @@ app = Flask(__name__, instance_relative_config = True) #create app instance and 
 # Setting up configuration
 app.config.from_object(DevConfig)#imports dev config class
 app.config.from_pyfile('config.py')
+
+# Initializing flask extensions
+bootstrap = bootstrap(app)
 
 from app import views
