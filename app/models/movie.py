@@ -12,21 +12,21 @@ class Movie:
         self.vote_average = vote_average
         self.vote_count = vote_count
 
-class Review:
+# class Review:
 
-    all_reviews = []
+#     all_reviews = []
 
-    def __init__(self,movie_id,title,imageurl,review):
-        self.movie_id = movie_id
-        self.title = title
-        self.imageurl = imageurl
-        self.review = review
-
-
-    def save_review(self):
-        Review.all_reviews.append(self)
+#     def __init__(self,movie_id,title,imageurl,review):
+#         self.movie_id = movie_id
+#         self.title = title
+#         self.imageurl = imageurl
+#         self.review = review
 
 
-    @classmethod
-    def clear_reviews(cls):
-        Review.all_reviews.clear()
+#     def save_review(self):
+#         Review.all_reviews.append(self)
+
+
+#     @classmethod
+#     def clear_reviews(cls):
+#         Review.all_reviews.clear()
