@@ -1,5 +1,6 @@
 # from flask import Flask #import flask from flask module
 # from ensurepip import bootstrap
+import imp
 from flask import Flask
 from flask_bootstrap import Bootstrap # import bootstrap
 
@@ -19,3 +20,4 @@ app.config.from_pyfile('config.py')
 bootstrap = Bootstrap(app)
 
 from app import views
+from app import error
