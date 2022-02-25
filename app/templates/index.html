@@ -1,3 +1,4 @@
+{% extends 'base.html'%} 
 {% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html>
@@ -10,6 +11,8 @@
         {% endif %}
     </head>
     <body>
+        <!-- Content block -->
+        {% block content%}
         <!-- Popular movie -->
         <h3> Popular Movies</h3>
         <ul>
@@ -25,26 +28,6 @@
         <ul>
             {{ macro.displayMovieList(now_showing)}}
         </ul>
-        <!-- <h3>Popular Movies</h3>
-        <ul>
-            {% for popular_movie in porpular %}
-            <li>{{ popular_movie.title}}</li>
-            {% endfor %}
-            
-        </ul>
-
-        <h3> Upcoming Movies </h3>
-        <ul>
-           {% for upcoming_movie in upcoming %}
-               <li>{{ upcoming_movie.title}}</li>
-           {% endfor %}
-       </ul>
-    
-       <h3>Now Showing</h3>
-        <ul>
-           {% for now_showing_movie in now_showing %}
-               <li>{{ now_showing_movie.title}}</li>
-           {% endfor %}
-       </ul> -->
+        {% endblock%}
     </body>
 </html>
