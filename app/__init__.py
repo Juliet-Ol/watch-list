@@ -3,21 +3,19 @@
 import imp
 from flask import Flask
 from flask_bootstrap import Bootstrap # import bootstrap
-
-
-# from app.config import DevConfig 
-
-from .config import DevConfig # import config
+from config import config_options
 
 # Initializing application
-app = Flask(__name__, instance_relative_config = True) #create app instance and allow connct to instance folder
+def create_app(config_name):
+    
+    app = Flask(__name__) #create app instance and allow connct to instance folder
+    # creating the app configurations
+    app.config.from_object(config_options[config_name])
 
-# Setting up configuration
-app.config.from_object(DevConfig)#imports dev config class
-app.config.from_pyfile('config.py')
 
-# Initializing flask extensions
-bootstrap = Bootstrap(app)
+    # Initializing flask extensions
+    bootstrap = Bootstrap(app)
 
-from app import views
-from app import error
+    #expects views nad forms
+
+    return app
