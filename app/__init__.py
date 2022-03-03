@@ -1,9 +1,12 @@
-# from flask import Flask #import flask from flask module
-# from ensurepip import bootstrap
-import imp
 from flask import Flask
 from flask_bootstrap import Bootstrap # import bootstrap
 from config import config_options
+from flask_sqlalchemy import SQLAlchemy
+
+
+bootstrap = Bootstrap()
+db = SQLAlchemy()
+
 
 # Initializing application
 def create_app(config_name):
@@ -14,7 +17,9 @@ def create_app(config_name):
 
 
     # Initializing flask extensions
-    bootstrap = Bootstrap(app)
+
+    bootstrap.init_app(app)
+    db.init_app(app)
 
     #expects views nad forms
     #registering the blueprint

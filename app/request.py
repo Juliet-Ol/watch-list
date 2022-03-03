@@ -20,7 +20,8 @@ def get_movies(category):
     Function that gets json response to our url request
     '''
     get_movies_url = base_url.format(category,api_key) # method that replaces {} placeholder in the api url with my api key
-
+    print('**********')
+    print(get_movies_url)
     with urllib.request.urlopen(get_movies_url) as url: #function that sends a request as a url
         get_movies_data = url.read() # reads the response and stores it in a variable
         get_movies_response = json.loads(get_movies_data) # converts the json reponse to a python dictionary
@@ -59,6 +60,8 @@ def process_results(movie_list):
 
 def get_movie(id):
     get_movie_details_url = base_url.format(id, api_key)
+    print('******')
+    print(get_movie_details_url)
 
     with urllib.request.urlopen(get_movie_details_url) as url:
         movie_details_data = url.read()
@@ -79,6 +82,9 @@ def get_movie(id):
 
 def search_movie(movie_name):
     search_movie_url = 'https://api.themoviedb.org/3/search/movie?api_key={}&query={}'.format(api_key,movie_name)
+    print('***************')
+    print(search_movie_url)
+
     with urllib.request.urlopen(search_movie_url) as url:
         search_movie_data = url.read()
         search_movie_response = json.loads(search_movie_data)
